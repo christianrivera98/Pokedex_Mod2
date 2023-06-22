@@ -1,52 +1,64 @@
-
-
-
-
-
-
-
-
-
-//--------------------------------------------------------------//
-:root {
-    --primary-color: #BA2D0B;
-    --secondary-color: #F9CB40;
-    --terciary-color: #73BA9B;
-}
-
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-body {
-    font-family: 'Montserrat', sans-serif;
-}
+@import 'universals';
+@import 'variables';
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css");
 
 .header-pok{
     display: flex;
-    background-color: var(--primary-color);
+    justify-content: space-between;
+    align-items: center;
+    background-color: $primary-color;
     padding: 5px 30px;
-    gap: 5px;
+    
+    & div{
+        display: flex;
+        gap: 10px;
+    }
+    &--ball{
+        
+        width: 40px; 
+    }
+
+    &--ball img{
+      
+        width: 100%;
+        margin-right: 10px;
+    }
+
+
+    &--title{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: 10px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 20px;
+    }
+
+    &--barra__busqueda{
+        
+        display: flex;
+        align-items: center;
+
+    }
+
+    &--barra__busqueda input{
+        height: 30px;
+        border-radius: 10px;
+        border: none;
+        padding-left: 10px;
+    }
+
+    &--barra__busqueda button{
+        background-color: $primary-color;
+        border: none;
+        font-size: 20px ;
+        padding-left: 5px ;
+    }
 }
 
-.title{  
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 20px;
-}
-.ball{
-    width: 40px;    
-}
-.ball img{ 
-    width: 100%;    
-}
 
 main {
-    background-color: var(--terciary-color);
+    background-color: $terciary-color;
     padding: 20px 10%;
     display: flex;
     gap: 60px;
@@ -54,34 +66,38 @@ main {
     flex-wrap: wrap;
 }
 
-.main-pokemon--title {
-    display: flex;
-    background-color: white;
-    border-radius: 15px;
-    padding: 10px 20%;
-    justify-content: center;
-    gap: 20px;
+.main-pokemon{
+    &--title{
+        display: flex;
+        background-color: white;
+        border-radius: 15px;
+        padding: 10px 20%;
+        justify-content: center;
+        gap: 20px;
+    }
+  
+    &--title h1{
+        font-size: 26px;
+        font-weight: 700;
+    }
 }
+
 
 .title-icon {
     width: 30px;
+
+    & img{
+        width: 100%;
+    }
 }
 
-.title-icon img {
-    width: 100%;
-}
-
-.main-pokemon--title h1 {
-    font-size: 26px;
-    font-weight: 700;
-}
 .pokemon-picture {
     margin-top: 40px;
     height: 400px;
-}
 
-.pokemon-picture img {
-    height: 100%;
+    & img{
+        height: 100%;
+    }
 }
 
 .main-table {
@@ -92,113 +108,143 @@ main {
     grid-template-columns: repeat(2, 1fr
     );
     justify-items: center;
+
+    &--table-element{
+        padding: 40px;
+    }
+
+    &--table-element h3{
+        font-weight: 400;
+        font-size: 16px;
+        text-align: center;
+    }
+
+    &--table-element p{
+        font-weight: 700;
+        font-size: 18px;
+        text-align: center;
+    }
 }
 
-.table-element {
-    padding: 40px;
-}
 
-.table-element h3 {
-    font-weight: 400;
-    font-size: 16px;
-    text-align: center;
-}
-
-.table-element p {
-    font-weight: 700;
-    font-size: 18px;
-    text-align: center;
-}
 
 .pie{
     background-color: white;
     width: 100%;
     padding: 20px;
-}
-.picture{
-    display: flex;
-    gap: 80px;
-    justify-content: center;
-    flex-wrap: wrap;
 
-}
-.subtitle{
-    justify-content: center;
-    align-items: center;
-    font-size: 24px;
-    padding: 40px;
-}
-.imagenes{
-    display: flex;
-    gap: 80px;
-    align-items: center;
-    flex-wrap: wrap;
-}
-
-.poke {
-    width: 100px;
-    height: 100px;
-    padding: 15px 15px;
-    background-color: var(--secondary-color);
-    border-radius: 20px;
-}
-
-.imagenes img{
-    width: 100%;
-}
-
-.poke:hover{
-background-color:var(--terciary-color);
-}
+    &--picture{
+        display: flex;
+        gap: 80px;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
 
 
-@media (max-width: 700px) {
+    &--subtitle{
+        justify-content: center;
+        align-items: center;
+        font-size: 24px;
+        padding: 40px;
+    }
+
+    &--imagenes{
+        display: flex;
+        gap: 80px;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    &--imagenes--boton{
+        border: none;
+        cursor: pointer;
+    }
+
+    &--imagenes--boton i{
+        font-size: 34px;
+    }
+
+    &--imagenes img{
+        width: 100%;
+    }
+
+    &--imagenes--poke{
+        width: 100px;
+        height: 100px;
+        padding: 15px 15px;
+        background-color: $secondary-color;
+        border-radius: 20px;
+
+        &:hover {
+            background-color: $terciary-color;
+        }
+    }
+
+}
+
+@media screen and (max-width: 700px) {
     .header-pok {
         display: flex;
         justify-content: center;
-    }
-
-    .picture {
-        gap: 0;
-        justify-content: center;
-        margin: 0 25%;
-    }
-
-    .imagenes {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 30px 60px;
-    }
-    
-    .main-table {
-        display: flex;
-        flex-direction: column;
-        padding: 60px 40px;
-        position: relative;
-    }
-
-    .table-element {
-        display: flex;
-        gap: 50px;
-        padding: 10px;
-    }
-    .pokemon-picture {
-        position: absolute;
-        height: 300px;
-        z-index: 1;
-        bottom: 140px;
-    }
-    .main-pokemon {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
     }
 
     main {
         gap: 260px;
     }
 
-    .subtitle {
-        padding: 0 40px 40px;
+    .pie{
+        &--picture{
+            gap: 0;
+            justify-content: center;
+            margin: 0 25%;
+        }
+
+
+        &--imagenes{
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px 60px;
+        }
+
+        
+        &--imagenes--boton{
+            border: none;
+            font-size: 20px;
+            background:none ;
+           
+        }
+
+        &--subtitle{
+            padding: 0 40px 40px;
+        }
     }
+  
+    .main-table {
+        display: flex;
+        flex-direction: column;
+        padding: 60px 40px;
+        position: relative;
+
+        &--table-element{
+            display: flex;
+            gap: 50px;
+            padding: 10px;
+        }
+    }
+
+    .main-pokemon{
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        &--pokemon-picture{
+            position: absolute;
+            height: 300px;
+            z-index: 1;
+            bottom: 140px;
+        }
+    }
+
+
 }
