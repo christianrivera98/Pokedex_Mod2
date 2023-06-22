@@ -1,38 +1,46 @@
-const getPokemonsConteiner = document.querySelector('.getPokemons-conteiner')
+import axios from "axios";
+import { printPokemons } from "../UI/printPokemons.js";
+import { printCurrentPokemon } from "../UI/printCurrentPokemon.js";
+const pokemonsContainer = document.querySelector('.pie--imagenes');
+const currentPokemon = document.getElementById('current-pokemon')
 
-function fetchPokemon(id) {
-    fetch(`https://pokeapi.co/api/v2/pokemon/${id}/`)
-    .then(res => res.json())
-    .then((data) => {
-        createPokemon(data);
-      });
-  
-}
-fetchPokemon(1);
+let pokemons = []
 
-function getPokemons(number) {
-    for (let i = 1; i <= number; i++) {
-        fetchPokemon(i);
-        
+export const getPokemons = async (url) => {
+    try {const response = await axios.get(url)
+    
+    if (response.status === 200) {
+        return new Promise((resolve) => {        
+            response.data.results.forEach(async (pokemon, index) => {
+            const {data} = await axios.get(pokemon.url)
+            console.log(data);
+            const newPokemon = {
+                name: data.name.toUpperCase(),
+                image: data.sprites.front_default,
+                height: data.height,
+                weight: data.weight,
+                experience: data.base_experience,
+                ability: data.abilities[0].ability.name.toUpperCase(),
+                number: data.order,
+                type: data.types[0].type.name.toUpperCase(),
+                id: data.id
+
+            }
+            pokemons.push(newPokemon);
+            let showPokemons = pokemons.slice(1, 5)
+            let showCurrentPokemon = pokemons.slice(0, 1)
+            
+                if (response.data.results.length === index + 1) {
+                    resolve(printPokemons(showPokemons, pokemonsContainer),
+                    printCurrentPokemon(showCurrentPokemon, currentPokemon))
+                }
+        });
+       
+        ;})
+
     }
 }
-
-function createPokemon(pokemon) {
-    const card = document.createElement('div');
-    card.classList.add('pokemon-card');
-
-    const spriteContainer = document.createElement ('div');
-    spriteContainer.classList.add('img-pokemon-conteiner');
-
-    const sprite = document.createElement ('img');
-    sprite.src = pokemon.sprites.front_default 
-
-    spriteContainer.appendChild(sprite);
-
-    card.appendChild(spriteContainer);
-
-    getPokemonsConteiner.appendChild(card);
-
+    catch (error){
+        console.log(error);
+    }
 }
-
-getPokemons(3);
