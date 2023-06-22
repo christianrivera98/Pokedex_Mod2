@@ -6,20 +6,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./style.css">
     <title>Pokedex</title>
 </head>
 <body>
     <header class="header-pok">
-        <figure class="ball">
-            <img src="../images_footer_header/pokebola.png" alt="La pokebola">
-        </figure>
-        <h2 class="title">POKEDEX_</h2>
-        <form class="barra__busqueda">
-            <input type="text" id="barra-busqueda" placeholder="Ingresa tu búsqueda">
-            <button type="submit" id="boton-busqueda">Buscar</button>
+
+        <div>
+            <figure class="header-pok--ball">
+                <img src="../images_footer_header/pokebola.png" alt="La pokebola">
+            </figure>
+            <h2 class="header-pok--title">POKEDEX_</h2>
         </div>
+        <div>
+            <form class="header-pok--barra__busqueda">
+                <input type="text" id="barra-busqueda" placeholder="Ingresa tu búsqueda">
+                <button type="submit" id="boton-busqueda"><i class="bi bi-search"></i></button>
+        </div>
+         
     </header> 
     <main>
         <section class="main-pokemon">
@@ -29,55 +35,55 @@
                 </figure>
                 <h1>SQUIRTLE</h1>
             </div>
-            <figure class="pokemon-picture">
+            <figure class="main-pokemon--pokemon-picture">
                 <img src="../images/squirtle.png" alt="Pokemon Squirtle">
             </figure>
         </section>
         <section class="main-table">
-            <div class="table-element">
+            <div class="main-table--table-element">
                 <h3>NO.</h3>
                 <p>0007</p>
             </div>
-            <div class="table-element">
+            <div class="main-table--table-element">
                 <h3>TYPE</h3>
                 <p>WATER</p>
             </div>
-            <div class="table-element">
+            <div class="main-table--table-element">
                 <h3>HEIGHT</h3>
                 <p>1.8 m</p>
             </div>
-            <div class="table-element">
+            <div class="main-table--table-element">
                 <h3>LEVEL</h3>
                 <p>23</p>
             </div>
-            <div class="table-element">
+            <div class="main-table--table-element">
                 <h3>ABILITY</h3>
                 <p>TORRENT</p>
             </div>
-            <div class="table-element">
+            <div class="main-table--table-element">
                 <h3>WEIGHT</h3>
                 <p>19.8 lbs</p>
             </div>
         </section>
     </main>
     <footer class="pie">
-        <article class="picture">
-            <h3 class="subtitle">OTHERS</h3>
-            <article class="imagenes">
-                <button class="boton" id="anterior">Anterior</button>
-                <figure class="poke">
+        <article class="pie--picture">
+            <h3 class="pie--subtitle">OTHERS</h3>
+            <article class="pie--imagenes">
+                <button class="pie--imagenes--boton" id="anterior"><i class="bi bi-caret-left-square-fill"></i></button>
+                <figure class="pie--imagenes--poke">
                     <img src="../images_footer_header/poke1.png" alt="Pokemon uno">
                 </figure>
-                <figure class="poke">
+                <figure class="pie--imagenes--poke">
                     <img src="../images_footer_header/poke2.png" alt="Pokemon dos">
                 </figure>
-                <figure class="poke">
+                <figure class="pie--imagenes--poke">
                     <img src="../images_footer_header/poke3.png" alt="Pokemon tres">
                 </figure>
-                <figure class="poke">
+                <figure class="pie--imagenes--poke">
                     <img src="../images_footer_header/poke4.png" alt="Pokemon cuatro">
                 </figure>
-                <button class="boton" id="siguiente">Siguiente</button>
+                <button class="pie--imagenes--boton" id="siguiente"><i class="bi bi-caret-right-square-fill"></i></button>
             </article>
         </article>
     </footer>
