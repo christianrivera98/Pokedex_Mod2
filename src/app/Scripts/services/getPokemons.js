@@ -22,6 +22,7 @@ export const getPokemons = async (url) => {
                 experience: data.base_experience,
                 ability: data.abilities[0].ability.name.toUpperCase(),
                 number: data.order,
+                type: data.types[0].type.name.toUpperCase(),
                 id: data.id
 
             }

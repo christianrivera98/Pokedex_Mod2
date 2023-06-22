@@ -9,7 +9,7 @@ export const printCurrentPokemon = (array, container) => {
                 </figure>
                 <h1>${pokemon.name}</h1>
             </div>
-            <figure class="main-pokemon--pokemon-picture">
+            <figure class="pokemon-picture">
                 <img src="${pokemon.image}" alt="${pokemon.name}">
             </figure>
         </section>
@@ -20,7 +20,7 @@ export const printCurrentPokemon = (array, container) => {
             </div>
             <div class="main-table--table-element">
                 <h3>TYPE</h3>
-                <p>WATER</p>
+                <p>${pokemon.type}</p>
             </div>
             <div class="main-table--table-element">
                 <h3>HEIGHT</h3>
