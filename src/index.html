@@ -6,42 +6,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./style.css">
     <title>Pokedex</title>
 </head>
 <body>
     <header class="header-pok">
-        <figure class="ball">
-            <img src="../images_footer_header/pokebola.png" alt="La pokebola">
-        </figure>
-        <h2 class="title">POKEDEX_</h2>
-        <form class="barra__busqueda">
-            <input type="text" id="barra-busqueda" placeholder="Ingresa tu búsqueda">
-            <button type="submit" id="boton-busqueda">Buscar</button>
+        <div>
+            <figure class="header-pok--ball">
+                <img src="../images_footer_header/pokebola.png" alt="La pokebola">
+            </figure>
+            <h2 class="header-pok--title">POKEDEX_</h2>
+        </div>
+        <div>
+            <form class="header-pok--barra__busqueda">
+                <input type="text" id="barra-busqueda" placeholder="Ingresa tu búsqueda">
+                <button type="submit" id="boton-busqueda"><i class="bi bi-search"></i></button>
         </div>
     </header> 
-    <main class="current-pokemon">
-    </main>
+    <main id="current-pokemon"></main>
     <footer class="pie">
-        <article class="picture">
-            <h3 class="subtitle">OTHERS</h3>
-            <article class="imagenes">
-                <button class="boton" id="anterior">Anterior</button>
-                <figure class="poke">
+        <article class="pie--picture">
+            <h3 class="pie--subtitle">OTHERS</h3>
+            <button class="pie--imagenes--boton" id="anterior"><i class="bi bi-caret-left-square-fill"></i></button>
+            <article class="pie--imagenes">
+                <figure class="pie--imagenes--poke">
                     <img src="../images_footer_header/poke1.png" alt="Pokemon uno">
                 </figure>
-                <figure class="poke">
+                <figure class="pie--imagenes--poke">
                     <img src="../images_footer_header/poke2.png" alt="Pokemon dos">
                 </figure>
-                <figure class="poke">
+                <figure class="pie--imagenes--poke">
                     <img src="../images_footer_header/poke3.png" alt="Pokemon tres">
                 </figure>
-                <figure class="poke">
+                <figure class="pie--imagenes--poke">
                     <img src="../images_footer_header/poke4.png" alt="Pokemon cuatro">
                 </figure>
-                <button class="boton" id="siguiente">Siguiente</button>
             </article>
+            <button class="pie--imagenes--boton" id="siguiente"><i class="bi bi-caret-right-square-fill"></i></button>
         </article>
     </footer>
 </body>

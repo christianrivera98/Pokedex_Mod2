@@ -1,8 +1,8 @@
 import axios from "axios";
 import { printPokemons } from "../UI/printPokemons.js";
 import { printCurrentPokemon } from "../UI/printCurrentPokemon.js";
-const pokemonsContainer = document.querySelector('.imagenes');
-const currentPokemon = document.querySelector('.current-pokemon')
+const pokemonsContainer = document.querySelector('.pie--imagenes');
+const currentPokemon = document.getElementById('current-pokemon')
 
 let pokemons = []
 
