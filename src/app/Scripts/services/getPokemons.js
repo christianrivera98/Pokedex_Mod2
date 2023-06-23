@@ -32,7 +32,7 @@ export const getPokemons = async (url) => {
             
                 if (response.data.results.length === index + 1) {
                     resolve(printPokemons(showPokemons, pokemonsContainer),
-                    printCurrentPokemon(showCurrentPokemon, currentPokemon))
+                    printCurrentPokemon(showCurrentPokemon, currentPokemon));
                 }
         });
        
