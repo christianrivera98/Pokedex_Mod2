@@ -1,11 +1,30 @@
+import iconPokemon from "../data/icon";
+
 export const printCurrentPokemon = (array, container) => {
+    const icono = iconPokemon;
+    
     container.innerHTML = '';
     array.forEach((pokemon) => {
+    let icon='';
+        
+
+        for (const key in iconPokemon) {
+            if (key == pokemon.type) {
+                
+                console.log(icono[key]);
+                
+                icon = icono[key];
+                
+            }
+            console.log('+++');
+            console.log(key + '<- igual a ->' + pokemon.type);
+            console.log('---');
+        }
         container.innerHTML += `
         <section class="main-pokemon">
         <div class="main-pokemon--title">
                 <figure class="title-icon">
-                    <img src="../images/water.png" alt="El icono del agua">
+                    <img src="${icon}">
                 </figure>
                 <h1>${pokemon.name}</h1>
             </div>

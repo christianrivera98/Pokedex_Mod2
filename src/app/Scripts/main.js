@@ -23,10 +23,12 @@ next.addEventListener("click", () => {
     offset += 4;
     removeChildNodes(pieImagenes);
     getPoke(offset, limit);
+    
 });
 
 document.addEventListener("DOMContentLoaded", async () => {
     await getPoke(offset, limit);
+
 })
 
 searchPokemons(inputPokemons)

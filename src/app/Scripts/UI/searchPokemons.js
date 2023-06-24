@@ -1,9 +1,9 @@
-import { getPoke } from "../services/getPokemons.js";
+import { currentPokemon, getPoke } from "../services/getPokemons.js";
 import { printPokemons } from "./printPokemons.js";
 let urlPokemons = "https://pokeapi.co/api/v2/pokemon/";
 
 
-export const searchPokemons = (input) => {
+export const searchPokemons = (input, ) => {
       const pokemonsContainer = document.querySelector(".pie--imagenes");
     input.addEventListener('input', async () => {
         const value = input.value.toLowerCase();
@@ -13,7 +13,7 @@ export const searchPokemons = (input) => {
         const filter = pokemons.filter((poke) =>
           poke.name.toLowerCase().includes(value)
         );
-        printPokemons(filter, pokemonsContainer);
+        printPokemons(filter, pokemonsContainer, currentPokemon);
         // pokemons.forEach(pok => {
         //     const isVisible = pok.name.toLowerCase().includes(value)
         //     if (!isVisible) {

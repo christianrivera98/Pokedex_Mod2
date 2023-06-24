@@ -3,8 +3,9 @@ import { printPokemons } from "../UI/printPokemons.js";
 import { printCurrentPokemon } from "../UI/printCurrentPokemon.js";
 import { removeChildNodes } from "../UI/printPokemons.js";
 
+
 const pokemonsContainer = document.querySelector(".pie--imagenes");
-const currentPokemon = document.getElementById("current-pokemon");
+export const currentPokemon = document.getElementById("current-pokemon");
 
 
 const pieImagenes = document.querySelector(".pie--imagenes");
@@ -55,8 +56,14 @@ export const getPoke = async (offset, limit) => {
     let showPokemons = pokemons.slice(1, 5);
     let showCurrentPokemon = pokemons.slice(0, 1);
 
-    printPokemons(pokemons, pokemonsContainer),
-      printCurrentPokemon(showCurrentPokemon, currentPokemon);
+    
+    printPokemons(pokemons, pokemonsContainer, currentPokemon),
+    printCurrentPokemon(showCurrentPokemon, currentPokemon);
+    
+    console.log('OOOOO');
+    console.log(showCurrentPokemon);
+    console.log('OOOOO');
+    //principal(pokemons);
 
     return pokemons;
   } catch (error) {
@@ -64,3 +71,4 @@ export const getPoke = async (offset, limit) => {
     return [];
   }
 };
+
