@@ -53,7 +53,6 @@ export const getPoke = async (offset, limit) => {
       pokemons.push(newPokemon);
     }
 
-    let showPokemons = pokemons.slice(1, 5);
     let showCurrentPokemon = pokemons.slice(0, 1);
 
     

@@ -73,9 +73,9 @@ main {
         display: flex;
         background-color: white;
         border-radius: 15px;
-        padding: 10px 20%;
+        padding: 10px;
         justify-content: center;
-        gap: 20px;
+        align-items: center;
     }
   
     &--title h1{
@@ -86,15 +86,8 @@ main {
 
 
 .title-icon {
-    width: 60px;
-    
-    
     & img{
-        
         width: 40px;
-        position: absolute;
-        
-        
     }
     padding-right: 15px;
     margin-right: 30px;
@@ -190,7 +183,6 @@ main {
             background-color: $terciary-color;
         }
     }
-
 }
 
 @media screen and (max-width: 700px) {
