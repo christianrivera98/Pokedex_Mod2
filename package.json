@@ -31,5 +31,9 @@
     "webpack": "^5.88.0",
     "webpack-cli": "^5.1.4",
     "webpack-dev-server": "^4.15.1"
-  }
+  },
+  "devDependencies": {
+    "gh-pages": "^5.0.0"
+  },
+  "homepage":"https://christianrivera98.github.io/Pokedex_Mod2"
 }
